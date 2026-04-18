@@ -1,7 +1,17 @@
 {
     "cards": [
         {
+            "name": "1% Ustedhan",
+            "type": "Strength",
+            "rarity": "Common",
+            "imageUrl": "https://cdn.discordapp.com/emojis/1334272977264574484.webp?size=128",
+            "description": "Ustedhan holding back his true power",
+            "set": "Base Set",
+            "power": 500
+        }
+        {
             "name": "",
+            "type": "",
             "rarity": "",
             "imageUrl": "",
             "description": "",

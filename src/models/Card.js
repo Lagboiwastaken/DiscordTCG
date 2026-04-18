@@ -1,43 +1,38 @@
 const mongoose = require('mongoose');
 
 const CARD_TYPES = {
-    BLOOD: 'Blood',
-    MIND: 'Mind',
-    TIME: 'Time',
-    TECH: 'Tech',
-    ARCANE: 'Arcane',
-    NECROTIC: 'Necrotic',
-    DEITY: 'Deity'
+    STRENGTH: 'Strength',
+    PHYSICAL: 'Physical',
+    INTELLIGENCE: 'Intelligence',
+    TECHNICAL: 'Technical',
+    AGILITY: 'Agility',
+    DARK: 'Dark'
 };
 
 const TYPE_STRENGTHS = {
-    [CARD_TYPES.BLOOD]: {
-        strong: [CARD_TYPES.MIND],
-        weak: [CARD_TYPES.NECROTIC]
+    [CARD_TYPES.STRENGTH]: {
+        strong: [CARD_TYPES.PHYSICAL],
+        weak: [CARD_TYPES.AGILITY]
     },
-    [CARD_TYPES.MIND]: {
-        strong: [CARD_TYPES.TIME],
-        weak: [CARD_TYPES.BLOOD]
+    [CARD_TYPES.PHYSICAL]: {
+        strong: [CARD_TYPES.INTELLIGENCE],
+        weak: [CARD_TYPES.STRENGTH]
     },
-    [CARD_TYPES.TIME]: {
-        strong: [CARD_TYPES.TECH],
-        weak: [CARD_TYPES.MIND]
+    [CARD_TYPES.INTELLIGENCE]: {
+        strong: [CARD_TYPES.TECHNICAL],
+        weak: [CARD_TYPES.PHYSICAL]
     },
-    [CARD_TYPES.TECH]: {
-        strong: [CARD_TYPES.ARCANE],
-        weak: [CARD_TYPES.TIME]
+    [CARD_TYPES.TECHNICAL]: {
+        strong: [CARD_TYPES.AGILITY],
+        weak: [CARD_TYPES.INTELLIGENCE]
     },
-    [CARD_TYPES.ARCANE]: {
-        strong: [CARD_TYPES.NECROTIC],
-        weak: [CARD_TYPES.TECH]
+    [CARD_TYPES.AGILITY]: {
+        strong: [CARD_TYPES.STRENGTH],
+        weak: [CARD_TYPES.TECHNICAL]
     },
-    [CARD_TYPES.NECROTIC]: {
-        strong: [CARD_TYPES.BLOOD],
-        weak: [CARD_TYPES.ARCANE]
-    },
-    [CARD_TYPES.DEITY]: {
-        strong: [CARD_TYPES.BLOOD, CARD_TYPES.MIND, CARD_TYPES.TIME, CARD_TYPES.TECH, CARD_TYPES.ARCANE, CARD_TYPES.NECROTIC],
-        weak: [CARD_TYPES.DEITY]
+    [CARD_TYPES.DARK]: {
+        strong: [CARD_TYPES.STRENGTH, CARD_TYPES.PHYSICAL, CARD_TYPES.INTELLIGENCE, CARD_TYPES.TECHNICAL, CARD_TYPES.AGILITY],
+        weak: [CARD_TYPES.DARK]
     }
 };
 
@@ -55,21 +50,21 @@ const cardSchema = new mongoose.Schema({
         enum: Object.values(CARD_TYPES),
         validate: {
             validator: function(type) {
-                // Deity type can only be used with deity rarity
-                if (type === CARD_TYPES.DEITY && this.rarity !== 'deity') {
+                // Dark type can only be used with deity rarity
+                if (type === CARD_TYPES.DARK && this.rarity !== 'deity') {
                     return false;
                 }
-                // Deity rarity must have deity type
-                if (this.rarity === 'deity' && type !== CARD_TYPES.DEITY) {
+                // Dark rarity must have deity type
+                if (this.rarity === 'deity' && type !== CARD_TYPES.DARK) {
                     return false;
                 }
                 return true;
             },
             message: props => {
-                if (props.value === CARD_TYPES.DEITY) {
-                    return 'Deity type can only be used with deity rarity cards';
+                if (props.value === CARD_TYPES.DARK) {
+                    return 'Dark type can only be used with deity rarity cards';
                 }
-                return 'Deity rarity cards must have deity type';
+                return 'Dark rarity cards must have deity type';
             }
         }
     },
@@ -85,9 +80,9 @@ cardSchema.statics.getTypeEffectiveness = function(attackerType, defenderType) {
         throw new Error('Invalid card type');
     }
 
-    // Deity is always strong against everything except other Deity
-    if (attackerType === CARD_TYPES.DEITY) {
-        return defenderType === CARD_TYPES.DEITY ? 'weak' : 'strong';
+    // Dark is always strong against everything except other Dark
+    if (attackerType === CARD_TYPES.DARK) {
+        return defenderType === CARD_TYPES.DARK ? 'weak' : 'strong';
     }
 
     // Check if attacker is strong against defender
