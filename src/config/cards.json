@@ -3,20 +3,56 @@
         {
             "name": "1% Ustedhan",
             "type": "Strength",
-            "rarity": "Common",
+            "rarity": "common",
             "imageUrl": "https://cdn.discordapp.com/emojis/1334272977264574484.webp?size=128",
-            "description": "Ustedhan holding back his true power",
+            "description": "Ustedhan holding back by using 1% of his true power",
             "set": "Base Set",
-            "power": 500
+            "power": 400
         },
         {
-            "name": "",
-            "type": "",
-            "rarity": "",
-            "imageUrl": "",
-            "description": "",
-            "set": "",
-            "power": 0
+            "name": "5% Ustedhan",
+            "type": "Strength",
+            "rarity": "uncommon",
+            "imageUrl": "https://cdn.discordapp.com/emojis/1334272977264574484.webp?size=128",
+            "description": "Ustedhan holding back by using 5% of his true power",
+            "set": "Base Set",
+            "power": 2000
+        },
+        {
+            "name": "20% Ustedhan",
+            "type": "Strength",
+            "rarity": "rare",
+            "imageUrl": "https://cdn.discordapp.com/emojis/1334272977264574484.webp?size=128",
+            "description": "Ustedhan holding back by using 20% of his true power",
+            "set": "Base Set",
+            "power": 8000
+        },
+        {
+            "name": "50% Ustedhan",
+            "type": "Strength",
+            "rarity": "legendary",
+            "imageUrl": "https://cdn.discordapp.com/emojis/1334272977264574484.webp?size=128",
+            "description": "Ustedhan holding back by using 50% of his true power",
+            "set": "Base Set",
+            "power": 20000
+        },
+        {
+            "name": "Ustedhan",
+            "type": "Strength",
+            "rarity": "deity",
+            "imageUrl": "https://cdn.discordapp.com/emojis/1334272977264574484.webp?size=128",
+            "description": "Ustedhan at his full power",
+            "set": "Base Set",
+            "power": 40000
+        },
+        {
+            "name": "120% Ustedhan",
+            "type": "Strength",
+            "rarity": "fused",
+            "imageUrl": "https://cdn.discordapp.com/emojis/1334272977264574484.webp?size=128",
+            "description": "Ustedhan has unlocked 120% of his potential",
+            "set": "Base Set",
+            "power": 48000
         }
     ]
 }
