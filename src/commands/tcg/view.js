@@ -27,13 +27,12 @@ const data = new SlashCommandSubcommandBuilder()
             .setDescription('Filter cards by type')
             .setRequired(false)
             .addChoices(
-                { name: 'Blood', value: CARD_TYPES.BLOOD },
-                { name: 'Mind', value: CARD_TYPES.MIND },
-                { name: 'Time', value: CARD_TYPES.TIME },
-                { name: 'Tech', value: CARD_TYPES.TECH },
-                { name: 'Arcane', value: CARD_TYPES.ARCANE },
-                { name: 'Necrotic', value: CARD_TYPES.NECROTIC },
-                { name: 'Deity', value: CARD_TYPES.DEITY }
+                { name: 'Strength', value: CARD_TYPES.STRENGTH },
+                { name: 'Physical', value: CARD_TYPES.PHYSICAL },
+                { name: 'Intelligence', value: CARD_TYPES.INTELLIGENCE },
+                { name: 'Technical', value: CARD_TYPES.TECHNICAL },
+                { name: 'Agility', value: CARD_TYPES.AGILITY },
+                { name: 'Dark', value: CARD_TYPES.DARK }
             ));
 
 function getRarityEmoji(rarity) {
@@ -50,13 +49,12 @@ function getRarityEmoji(rarity) {
 
 function getTypeEmoji(type) {
     const emojis = {
-        [CARD_TYPES.BLOOD]: '🩸',
-        [CARD_TYPES.MIND]: '🧠',
-        [CARD_TYPES.TIME]: '⏳',
-        [CARD_TYPES.TECH]: '⚡',
-        [CARD_TYPES.ARCANE]: '✨',
-        [CARD_TYPES.NECROTIC]: '💀',
-        [CARD_TYPES.DEITY]: '🌟'
+        [CARD_TYPES.STRENGTH]: '🩸',
+        [CARD_TYPES.PHYSICAL]: '🧠',
+        [CARD_TYPES.INTELLIGENCE]: '⏳',
+        [CARD_TYPES.TECHNICAL]: '⚡',
+        [CARD_TYPES.AGILITY]: '✨',
+        [CARD_TYPES.DARK]: '🌟'
     };
     return emojis[type] || '❓';
 }
