@@ -72,7 +72,7 @@ async function execute(interaction) {
         }
 
         // Calculate base credits (equal to user's level) and apply Gorvyn's multiplier
-        let creditsToGive = user.level;
+        let creditsToGive = config.earnAmount;
         if (hasGorvyn) {
             creditsToGive *= 2;
         }

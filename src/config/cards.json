@@ -10,6 +10,24 @@
             "power": 400
         },
         {
+            "name": "Goku (Kid) (DB)",
+            "type": "Physical",
+            "rarity": "common",
+            "imageUrl": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTiW5lrBdBv2IAvb4YLNnzsClCEjJjMpkJsAXIA9PXNyigkTuInYkrrh8nkVNYmc8dHm2WbiGqYHon04civ1E1Y_b0SeVW9Fx_BG5UlXLOA6g&s=10",
+            "description": "Goku during early DB",
+            "set": "Base Set",
+            "power": 500
+        },
+        {
+            "name": "Vegeta (Toddler)",
+            "type": "Technical",
+            "rarity": "common",
+            "imageUrl": "https://th.bing.com/th/id/OIP.OOPGKHxXwPqKoOIC1hMWhAHaKz?w=206&h=301&c=7&r=0&o=7&dpr=1.3&pid=1.7&rm=3",
+            "description": "Probably smokes Goku anyway",
+            "set": "Base Set",
+            "power": 500
+        },
+        {
             "name": "5% Ustedhan",
             "type": "Strength",
             "rarity": "uncommon",
@@ -17,6 +35,15 @@
             "description": "Ustedhan holding back by using 5% of his true power",
             "set": "Base Set",
             "power": 2000
+        },
+        {
+            "name": "Goku (DB)",
+            "type": "Agility",
+            "rarity": "uncommon",
+            "imageUrl": "https://cdn.discordapp.com/emojis/1334272977264574484.webp?size=128",
+            "description": "Goku during his fight against Piccolo in the WT",
+            "set": "Base Set",
+            "power": 1800
         },
         {
             "name": "20% Ustedhan",
